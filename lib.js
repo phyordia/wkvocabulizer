@@ -15,18 +15,22 @@ function refresh_wkkey_cookie(){
     let wkkey_cookie = getCookie("wkkey");
     let wkkey_cur = $("#wk-key").val()
 
-    //   console.log(wkkey_cookie, wkkey_cur)
+      console.log(wkkey_cookie, wkkey_cur)
+
+    if(wkkey_cookie===wkkey_cur){
+        return wkkey_cookie
+    }
 
     // There's a new key in the input field
     if(wkkey_cur!=="" && wkkey_cur!==wkkey_cookie){
-        // console.log("setting cookie")
+        console.log("setting cookie")
         setCookie("wkkey", wkkey_cur, 365); // update cookie
         return wkkey_cur
     }
 
     // There's a cookie set, get it.
     if (wkkey_cur==="" && wkkey_cookie!==""){
-        // console.log("retrieving cookie")
+        console.log("retrieving cookie")
         $("#wk-key").val(wkkey_cookie)  
         return wkkey_cookie 
     }

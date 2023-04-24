@@ -279,9 +279,7 @@ $( document ).ready(function() {
 
     const wkkey = refresh_wkkey_cookie()
         
-        if(wkkey===undefined){
-            $("#display-area").html("No WaniKani Key set")    
-        } else {
+        if(wkkey!==undefined){      
             $("#wk-key").val(wkkey)
         }
 

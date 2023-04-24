@@ -12,8 +12,6 @@ function refresh_wkkey_cookie(){
         return Cookies.get(cname)
       }
 
-
-
     let wkkey_cookie = getCookie("wkkey");
     let wkkey_cur = $("#wk-key").val()
 
@@ -273,21 +271,25 @@ function display_sentences(data){
 
     html += '</div>'
 
-
-
-
-
      $("#display-area").html(html)
 
 }
 
 $( document ).ready(function() {
 
+    const wkkey = refresh_wkkey_cookie()
+        
+        if(wkkey===undefined){
+            $("#display-area").html("No WaniKani Key set")    
+        } else {
+            $("#wk-key").val(wkkey)
+        }
+
     $("#get-user-info").click(()=>{
         const wkkey = refresh_wkkey_cookie()
         if(wkkey===undefined){
             $("#display-area").html("No WaniKani Key set")    
-        }  
+        }
         get_user_info(wkkey)
     })
 

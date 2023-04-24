@@ -1,0 +1,22 @@
+.highlight-kanji{
+    background-color: aqua;
+}
+
+.tri-state-toggle {
+    display: flex;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 50px;
+  }
+  #tristate-2 {
+    opacity: 1;
+  }
+
+.tri-state-input {
+    height: 30px;
+    width: 30px;
+    appearance: none;
+    background-color: black;
+    border-radius: 50%;
+    opacity: 0;
+  }
